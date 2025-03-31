@@ -42,7 +42,7 @@ import com.twofauth.android.main_activity.tasks.DataFilterer;
 import com.twofauth.android.main_activity.tasks.DataLoader;
 import com.twofauth.android.main_activity.tasks.DataLoader.LoadedAccountsData;
 import com.twofauth.android.main_activity.GroupsListAdapter;
-import com.twofauth.android.main_activity.tasks.SingleAccoutDataSynchronizer;
+import com.twofauth.android.main_activity.tasks.SingleAccountDataSynchronizer;
 import com.twofauth.android.main_service.StatusChangedBroadcastReceiver;
 import com.twofauth.android.MainService.SyncResultType;
 import com.twofauth.android.Database.TwoFactorAccount;
@@ -300,7 +300,7 @@ public class MainActivity extends BaseActivity implements StatusChangedBroadcast
     }
 
     public void onAccountSynchronizationNeeded(@NotNull final TwoFactorAccount account) {
-        SingleAccoutDataSynchronizer.getBackgroundTask(this, mAccountsListAdapter, account, null).start();
+        SingleAccountDataSynchronizer.getBackgroundTask(this, mAccountsListAdapter, account, null).start();
     }
 
     public void onOtpCodeBecomesVisible(@NotNull final String otp_type) {

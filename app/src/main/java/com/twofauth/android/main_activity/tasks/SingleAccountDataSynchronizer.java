@@ -12,7 +12,7 @@ import com.twofauth.android.main_service.ServerDataSynchronizer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-public class SingleAccoutDataSynchronizer {
+public class SingleAccountDataSynchronizer {
     public interface OnSynchronizerFinishedListener {
         public abstract void onSynchronizedFinished(boolean success);
     }
@@ -38,8 +38,7 @@ public class SingleAccoutDataSynchronizer {
         @Override
         public Object onBackgroundTaskStarted(@Nullable final Object data) {
             try {
-                ServerDataSynchronizer.synchronizeAccountData(mActivity, mAccount);
-                mSuccess = true;
+                mSuccess = ServerDataSynchronizer.synchronizeAccountData(mActivity, mAccount);
             }
             catch (Exception e) {
                 Log.e(Constants.LOG_TAG_NAME, "Exception while trying to synchronize an element", e);
