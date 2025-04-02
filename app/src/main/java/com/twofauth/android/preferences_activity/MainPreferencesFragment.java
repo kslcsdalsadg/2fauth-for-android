@@ -1,5 +1,6 @@
 package com.twofauth.android.preferences_activity;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -212,7 +213,7 @@ public class MainPreferencesFragment extends PreferenceFragmentCompat implements
             }
             if (changed) {
                 mIntent.putStringArrayListExtra(EXTRA_CHANGED_SETTINGS, mChanges);
-                getActivity().setResult(PreferencesActivity.RESULT_OK, mIntent);
+                getActivity().setResult(Activity.RESULT_OK, mIntent);
             }
         }
     }
