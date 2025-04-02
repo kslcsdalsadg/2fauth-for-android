@@ -189,6 +189,7 @@ public class MainActivity extends BaseActivity implements StatusChangedBroadcast
         final RecyclerView recycler_view = (RecyclerView) findViewById(R.id.accounts_list);
         ((GridLayoutManager) recycler_view.getLayoutManager()).setSpanCount(new_config.orientation == Configuration.ORIENTATION_PORTRAIT ? 1 : 2);
         recycler_view.getAdapter().notifyDataSetChanged();
+        setAccountsListIndexVisibility();
     }
 
     private void onKeyboardVisibilityChanged(final boolean visible) {
